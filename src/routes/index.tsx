@@ -157,16 +157,7 @@ function Index() {
               key={s.title}
               className="group overflow-hidden rounded-lg border border-border bg-card"
             >
-              <div className="aspect-[4/5] overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+              <ImagePlaceholder className="aspect-[4/5] border-0" />
               <div className="p-5">
                 <h3 className="flex items-center gap-2 font-display text-2xl tracking-wide">
                   <Scissors className="size-5 text-primary" /> {s.title}
