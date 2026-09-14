@@ -1,10 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MapPin, Instagram, Scissors, Clock } from "lucide-react";
+import { Phone, MapPin, Instagram, Scissors, Clock, ImagePlus } from "lucide-react";
 
-import heroImg from "@/assets/hero.jpg";
-import fadeImg from "@/assets/fade.jpg";
-import beardImg from "@/assets/beard.jpg";
-import styleImg from "@/assets/style.jpg";
+function ImagePlaceholder({ className = "", label }: { className?: string; label?: string }) {
+  return (
+    <div
+      className={`flex flex-col items-center justify-center gap-3 border-2 border-dashed border-muted-foreground/30 bg-secondary/50 text-muted-foreground ${className}`}
+    >
+      <ImagePlus className="size-10" />
+      <span className="text-sm font-semibold">{label ?? "Kuva tulossa"}</span>
+    </div>
+  );
+}
 
 const PHONE = "041 796 2012";
 const PHONE_LINK = "tel:+358417962012";
@@ -53,17 +59,14 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
-    img: fadeImg,
     title: "Hiustenleikkaus",
     desc: "Klassinen leikkaus tai moderni fade — aina siisti lopputulos.",
   },
   {
-    img: beardImg,
     title: "Parranajo & muotoilu",
     desc: "Perinteinen partaveitsiajo ja parran trimmaus tarkalla kädellä.",
   },
   {
-    img: styleImg,
     title: "Muotoilu & viimeistely",
     desc: "Viimeistele look laadukkailla tuotteilla ja tyylillä.",
   },
@@ -101,15 +104,12 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative flex min-h-svh items-end">
-        <img
-          src={heroImg}
-          alt="Oro Barbershopin liiketila — nahkainen parturituoli ja lämmin valaistus"
-          width={1920}
-          height={1088}
-          className="absolute inset-0 h-full w-full object-cover"
+      <section className="relative flex min-h-svh items-end overflow-hidden">
+        <ImagePlaceholder
+          label="Liiketilan kuva tulossa"
+          className="absolute inset-0 border-0"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
         <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-40">
           <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary">
             <MapPin className="size-4" /> Norkkokuja 3
@@ -157,16 +157,7 @@ function Index() {
               key={s.title}
               className="group overflow-hidden rounded-lg border border-border bg-card"
             >
-              <div className="aspect-[4/5] overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+              <ImagePlaceholder className="aspect-[4/5] border-0" />
               <div className="p-5">
                 <h3 className="flex items-center gap-2 font-display text-2xl tracking-wide">
                   <Scissors className="size-5 text-primary" /> {s.title}
