@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MapPin, Instagram, Scissors, Clock, ImagePlus } from "lucide-react";
+import logoAsset from "@/assets/oro-logo.png.asset.json";
 
 function ImagePlaceholder({ className = "", label }: { className?: string; label?: string }) {
   return (
@@ -77,9 +78,14 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="#" className="font-display text-2xl tracking-wider text-primary">
-            ORO BARBERSHOP
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+          <a href="#" className="flex items-center gap-3" aria-label="Oro Barbershop">
+            <img
+              src={logoAsset.url}
+              alt="Oro Barbershop logo"
+              className="h-14 w-auto rounded-full ring-2 ring-primary/80"
+            />
+            <span className="font-display text-2xl tracking-wider text-primary">ORO BARBERSHOP</span>
           </a>
           <nav className="hidden items-center gap-8 text-sm font-semibold md:flex">
             <a href="#palvelut" className="transition-colors hover:text-primary">
@@ -271,10 +277,22 @@ function Index() {
       {/* Footer */}
       <footer className="border-t border-border bg-card">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-10 text-sm text-muted-foreground sm:flex-row">
-          <p className="font-display text-xl tracking-wider text-foreground">
-            ORO <span className="text-primary">BARBERSHOP</span>
+          <a href="#" className="flex items-center gap-3" aria-label="Oro Barbershop">
+            <img
+              src={logoAsset.url}
+              alt="Oro Barbershop logo"
+              className="h-11 w-auto rounded-full ring-2 ring-primary/80"
+            />
+            <span className="font-display text-xl tracking-wider text-foreground">
+              ORO <span className="text-primary">BARBERSHOP</span>
+            </span>
+          </a>
+          <p>
+            Norkkokuja 3 ·{" "}
+            <a href={PHONE_LINK} className="hover:text-primary">
+              {PHONE}
+            </a>
           </p>
-          <p>Norkkokuja 3 · {PHONE}</p>
           <a
             href={INSTAGRAM}
             target="_blank"
