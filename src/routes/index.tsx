@@ -277,10 +277,22 @@ function Index() {
       {/* Footer */}
       <footer className="border-t border-border bg-card">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-10 text-sm text-muted-foreground sm:flex-row">
-          <p className="font-display text-xl tracking-wider text-foreground">
-            ORO <span className="text-primary">BARBERSHOP</span>
+          <a href="#" className="flex items-center gap-3" aria-label="Oro Barbershop">
+            <img
+              src={logoAsset.url}
+              alt="Oro Barbershop logo"
+              className="h-10 w-auto rounded-full border border-border/60"
+            />
+            <span className="font-display text-xl tracking-wider text-foreground">
+              ORO <span className="text-primary">BARBERSHOP</span>
+            </span>
+          </a>
+          <p>
+            Norkkokuja 3 ·{" "}
+            <a href={PHONE_LINK} className="hover:text-primary">
+              {PHONE}
+            </a>
           </p>
-          <p>Norkkokuja 3 · {PHONE}</p>
           <a
             href={INSTAGRAM}
             target="_blank"
