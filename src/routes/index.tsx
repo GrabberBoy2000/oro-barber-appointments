@@ -59,17 +59,14 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
-    img: fadeImg,
     title: "Hiustenleikkaus",
     desc: "Klassinen leikkaus tai moderni fade — aina siisti lopputulos.",
   },
   {
-    img: beardImg,
     title: "Parranajo & muotoilu",
     desc: "Perinteinen partaveitsiajo ja parran trimmaus tarkalla kädellä.",
   },
   {
-    img: styleImg,
     title: "Muotoilu & viimeistely",
     desc: "Viimeistele look laadukkailla tuotteilla ja tyylillä.",
   },
@@ -107,15 +104,12 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative flex min-h-svh items-end">
-        <img
-          src={heroImg}
-          alt="Oro Barbershopin liiketila — nahkainen parturituoli ja lämmin valaistus"
-          width={1920}
-          height={1088}
-          className="absolute inset-0 h-full w-full object-cover"
+      <section className="relative flex min-h-svh items-end overflow-hidden">
+        <ImagePlaceholder
+          label="Liiketilan kuva tulossa"
+          className="absolute inset-0 border-0"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
         <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-40">
           <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary">
             <MapPin className="size-4" /> Norkkokuja 3
