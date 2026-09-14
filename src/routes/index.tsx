@@ -78,9 +78,14 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="#" className="font-display text-2xl tracking-wider text-primary">
-            ORO BARBERSHOP
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+          <a href="#" className="flex items-center gap-3" aria-label="Oro Barbershop">
+            <img
+              src={logoAsset.url}
+              alt="Oro Barbershop logo"
+              className="h-12 w-auto rounded-full border border-border/60"
+            />
+            <span className="font-display text-2xl tracking-wider text-primary">ORO BARBERSHOP</span>
           </a>
           <nav className="hidden items-center gap-8 text-sm font-semibold md:flex">
             <a href="#palvelut" className="transition-colors hover:text-primary">
