@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MapPin, Instagram, Scissors, Clock, ImagePlus } from "lucide-react";
+import logoAsset from "@/assets/oro-logo.png.asset.json";
 
 function ImagePlaceholder({ className = "", label }: { className?: string; label?: string }) {
   return (
