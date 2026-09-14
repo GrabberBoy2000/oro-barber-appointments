@@ -83,7 +83,7 @@ function Index() {
             <img
               src={logoAsset.url}
               alt="Oro Barbershop logo"
-              className="h-12 w-auto rounded-full border border-border/60"
+              className="h-14 w-auto rounded-full ring-2 ring-primary/80"
             />
             <span className="font-display text-2xl tracking-wider text-primary">ORO BARBERSHOP</span>
           </a>
