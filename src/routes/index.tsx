@@ -1,10 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MapPin, Instagram, Scissors, Clock } from "lucide-react";
+import { Phone, MapPin, Instagram, Scissors, Clock, ImagePlus } from "lucide-react";
 
-import heroImg from "@/assets/hero.jpg";
-import fadeImg from "@/assets/fade.jpg";
-import beardImg from "@/assets/beard.jpg";
-import styleImg from "@/assets/style.jpg";
+function ImagePlaceholder({ className = "", label }: { className?: string; label?: string }) {
+  return (
+    <div
+      className={`flex flex-col items-center justify-center gap-3 border-2 border-dashed border-muted-foreground/30 bg-secondary/50 text-muted-foreground ${className}`}
+    >
+      <ImagePlus className="size-10" />
+      <span className="text-sm font-semibold">{label ?? "Kuva tulossa"}</span>
+    </div>
+  );
+}
 
 const PHONE = "041 796 2012";
 const PHONE_LINK = "tel:+358417962012";
